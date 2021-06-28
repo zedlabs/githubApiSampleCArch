@@ -49,4 +49,5 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
     implementation project(":domain")
+    implementation project(":data")
 }
