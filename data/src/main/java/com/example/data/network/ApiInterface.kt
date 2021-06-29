@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface ApiInterface {
 
-    @GET("/repo")
+    @GET("repo")
     fun getTrendingRepositories(
         @Query("lang") lang: String,
         @Query("since") since: String,

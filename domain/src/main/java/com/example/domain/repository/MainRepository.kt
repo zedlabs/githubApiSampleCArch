@@ -1,7 +1,6 @@
 package com.example.domain.repository
 
-import com.example.data.models.RepositoryItem
-import com.example.data.models.TrendingRepositoryResponse
+import com.example.domain.models.RepositoryItem
 import io.reactivex.Single
 
 interface MainRepository {

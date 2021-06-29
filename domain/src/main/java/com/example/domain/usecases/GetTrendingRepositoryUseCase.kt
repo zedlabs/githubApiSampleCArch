@@ -1,6 +1,6 @@
 package com.example.domain.usecases
 
-import com.example.data.models.RepositoryItem
+import com.example.domain.models.RepositoryItem
 import com.example.domain.repository.MainRepository
 import io.reactivex.Scheduler
 import io.reactivex.Single
