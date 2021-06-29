@@ -6,6 +6,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.githubapisample.MainApplication
 import com.example.githubapisample.R
 import javax.inject.Inject
@@ -26,11 +28,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
 
-        val tv = findViewById<TextView>(R.id.tv)
+        val recyclerView = findViewById<RecyclerView>(R.id.rv)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        val adapter = TrendingListAdapter()
+        recyclerView.adapter = adapter
+
         viewModel.repositoryListLiveData.observe(this, {
-            it.forEach { item ->
-                tv.append(item.repo + "\n")
-            }
+            adapter.submitList(it)
         })
 
 

@@ -23,11 +23,9 @@ class MainViewModel constructor(
             override fun onSuccess(response: List<RepositoryItem>) {
                 repositoryListLiveData.value = response
             }
-
             override fun onError(e: Throwable) {
                 Log.e("MainViewModel", "onError: ${e.message}")
             }
-
         })
     }
 }
