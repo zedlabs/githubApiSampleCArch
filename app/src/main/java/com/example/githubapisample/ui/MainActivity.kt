@@ -1,6 +1,8 @@
 package com.example.githubapisample.ui
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -23,5 +25,14 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
+
+        val tv = findViewById<TextView>(R.id.tv)
+        viewModel.repositoryListLiveData.observe(this, {
+            it.forEach { item ->
+                tv.append(item.repo + "\n")
+            }
+        })
+
+
     }
 }

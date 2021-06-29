@@ -13,13 +13,13 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideApiInterface(): ApiInterface? {
-        return ApiClient.getClient()?.create(ApiInterface::class.java)
+    fun provideApiInterface(): ApiInterface {
+        return ApiClient.getClient().create(ApiInterface::class.java)
     }
 
     @Provides
     @Singleton
-    fun providePostExecutionThread(): Scheduler? {
+    fun providePostExecutionThread(): Scheduler {
         return AndroidSchedulers.mainThread()
     }
 }

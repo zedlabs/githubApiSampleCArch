@@ -1,6 +1,7 @@
 package com.example.githubapisample.di
 
 import androidx.lifecycle.ViewModelProvider
+import com.example.domain.usecases.GetTrendingRepositoryUseCase
 import com.example.githubapisample.ViewModelProviderFactory
 import com.example.githubapisample.ui.MainViewModel
 import dagger.Module
@@ -11,8 +12,8 @@ import javax.inject.Named
 class MainModule {
 
     @Provides
-    fun provideMainViewModel(): MainViewModel {
-        return MainViewModel()
+    fun provideMainViewModel(getTrendingRepositoryUseCase: GetTrendingRepositoryUseCase): MainViewModel {
+        return MainViewModel(getTrendingRepositoryUseCase)
     }
 
     @Provides
