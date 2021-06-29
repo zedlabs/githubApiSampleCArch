@@ -21,8 +21,13 @@ class MainRepositoryImpl constructor(val apiInterface: ApiInterface) : MainRepos
 
 private fun TrendingRepositoryResponse.toDomainModel(): List<RepositoryItem> {
     val result: List<RepositoryItem>? = items?.map {
-        RepositoryItem(it.repo, it.repoLink, it.desc, it.lang, it.stars, it.forks, it.addedStars, it.avatars)
+        RepositoryItem(
+            it.repo,
+            it.desc,
+            it.addedStars,
+            it.avatars
+        )
     }
 
-    return result?: listOf()
+    return result ?: listOf()
 }
