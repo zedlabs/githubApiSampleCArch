@@ -21,8 +21,8 @@ jobs:
         with:
           java-version: 11
       - name: Build with Gradle
-        run: ./gradlew assembleCurrentDebug
+        run: ./gradlew assembleDebug
       - name: Run unit tests
-        run: ./gradlew testCurrentDebugUnitTest
+        run: ./gradlew test --stacktrace
       - name: Run lint
         run: ./gradlew lint
