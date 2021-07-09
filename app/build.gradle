@@ -71,6 +71,10 @@ dependencies {
     //dagger 2
     implementation 'com.google.dagger:dagger:2.27'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    androidTestImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     kapt 'com.google.dagger:dagger-compiler:2.27'
 
     implementation 'com.android.support:multidex:1.0.3'
